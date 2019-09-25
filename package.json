@@ -1,0 +1,23 @@
+{
+  "name": "gdl003-burger-queen-back-end",
+  "version": "1.0.0",
+  "description": "## 1. Preámbulo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karina2004liz/GDL003-Burger-Queen-Back-End.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karina2004liz/GDL003-Burger-Queen-Back-End/issues"
+  },
+  "homepage": "https://github.com/karina2004liz/GDL003-Burger-Queen-Back-End#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^3.3.2"
+  }
+}
