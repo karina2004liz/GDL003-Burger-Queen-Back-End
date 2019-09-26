@@ -19,6 +19,8 @@
   "homepage": "https://github.com/karina2004liz/GDL003-Burger-Queen-Back-End#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mongodb": "^3.3.2"
-  }
+    "mongodb": "^3.3.2",
+    "now": "^16.2.0"
+  },
+  "devDependencies": {}
 }
