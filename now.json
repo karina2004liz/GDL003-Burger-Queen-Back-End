@@ -11,6 +11,11 @@
         "src": "/post",
         "dest": "/index.js",
         "methods": ["POST"]
+      },
+      {
+        "src": "/products",
+        "dest": "/index.js",
+        "methods": ["GET"]
       }
     ]
   }

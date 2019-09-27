@@ -76,3 +76,23 @@ app.get("/get", (req, res, next) => {
 app.post('/post', function(request, response) {
     response.send(request.body);
 });
+
+
+app.get("/products", (req,res)=>{
+  res.send(products)
+})
+
+var products = {
+
+ products: [
+
+    {name : "coffee",
+    price: 15
+    },
+    {
+    name: "tea",
+    price: 10
+    }
+
+  ]
+}
