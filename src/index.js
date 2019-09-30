@@ -36,16 +36,19 @@ app.listen(port, err => {
 });
 
 app.get('/api/product', (req, res, next) => {
-    res.json({
-        "version": process.env.VERSION
-    });
-    res.send(200, {products: []})
+  // let productId = req.params.productId
+
+   Product.find((err, product) =>{
+     if (err) return res.status(500).send({message: "Error in process"})
+     if (!product) return res.status(404).send({message: "The product doesn´t exists"})
+
+     res.status(200).send({product})
+   })
 });
 
-app.get('api/product/:productId', (req, res) => {
-
+/*app.get('api/product/:productId', (req, res) => {
 })
-
+*/
 app.post('/api/product', (req, res) => {
   console.log('POST /api/product')
   console.log(req.body)
@@ -61,7 +64,17 @@ app.post('/api/product', (req, res) => {
     if (err) res.status(500).send({message: `Error while saving in database: ${err}`})
     res.status(200).send({product: productStored})
   })
+  /*app.get('api/product', (req, res) => {
+    product.find()
+    .then(products =>{
+      res.send(products);
+    }).catch(err =>{
+      console.log("Don´t work")
+    })
+  })*/
 });
+
+
 
 app.put('/api/product/:productId', (req, res) => {
 
