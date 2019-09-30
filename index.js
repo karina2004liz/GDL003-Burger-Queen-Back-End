@@ -1,6 +1,6 @@
 
 
-
+/*
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://karina2004liz:ex300172004@firstdatabase-t9rak.gcp.mongodb.net/test?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true });
@@ -10,7 +10,7 @@ client.connect(err => {
   client.close();
 });
 
-
+*/
 
 /*
 
@@ -71,10 +71,13 @@ var cors = require("cors");
 var bodyParser = require("body-parser");
 var express = require("express");
 var app = express();
+var mongose = require("mongoose");
+
 
 
 app.use(cors());
 //app.use(express.json());
+
 
 app.listen(port, err => {
     if (err) throw err
@@ -113,8 +116,18 @@ var products = {
     price: 20,
     id: 3
 
-    }
+    },
+    {name: "lechera",
+    price: 20,
+    id: 4
 
+    }
+    ,
+    {name: "Galleta",
+    price: 20,
+    id: 5
+
+    }
   ]
 }
 
