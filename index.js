@@ -1,7 +1,16 @@
-//const Mongo = require('mongodb');
 
 
-//console.log(Mongo);
+
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://karina2004liz:ex300172004@firstdatabase-t9rak.gcp.mongodb.net/test?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
+
 
 /*
 
@@ -59,7 +68,7 @@ app.listen(3001, function() {
 const port = process.env.PORT || 3000
 
 var cors = require("cors");
-
+var bodyParser = require("body-parser");
 var express = require("express");
 var app = express();
 
@@ -108,3 +117,6 @@ var products = {
 
   ]
 }
+
+
+
