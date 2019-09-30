@@ -58,9 +58,14 @@ app.listen(3001, function() {
 
 const port = process.env.PORT || 3000
 
+var cors = require("cors");
+
 var express = require("express");
 var app = express();
-app.use(express.json());
+
+
+app.use(cors());
+//app.use(express.json());
 
 app.listen(port, err => {
     if (err) throw err
@@ -87,11 +92,18 @@ var products = {
  products: [
 
     {name : "coffee",
-    price: 15
+    price: 15,
+    id: 1,
     },
     {
     name: "tea",
-    price: 10
+    price: 10,
+    id: 2,
+    },
+    {name: "chocolate",
+    price: 20,
+    id: 3
+
     }
 
   ]
