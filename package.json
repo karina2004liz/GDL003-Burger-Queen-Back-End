@@ -4,7 +4,7 @@
   "description": "## 1. Preámbulo",
   "main": "index.js",
   "scripts": {
-    "start": "node .",
+    "start": "nodemon node .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/index.js"
   },
