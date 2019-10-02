@@ -15,19 +15,54 @@
         },
         
       {
-        "src": "/get",
+        "src": "/api/products",
         "dest": "/index.js",
         "methods": ["GET"]
       },
       {
-        "src": "/post",
+        "src": "/api/products/:productId",
         "dest": "/index.js",
-        "methods": ["POST"]
+        "methods": ["GET"]
       },
       {
         "src": "/api/products",
         "dest": "/index.js",
+        "methods": ["POST"]
+      },
+      {
+        "src": "/api/products/:productId",
+        "dest": "/index.js",
+        "methods": ["PUT"]
+      },
+      {
+        "src": "/api/products/:productId",
+        "dest": "/index.js",
+        "methods": ["DELETE"]
+      },
+      {
+        "src": "/api/orders",
+        "dest": "/index.js",
         "methods": ["GET"]
+      },
+      {
+        "src": "/api/orders/:orderId",
+        "dest": "/index.js",
+        "methods": ["GET"]
+      },
+      {
+        "src": "/api/orders",
+        "dest": "/index.js",
+        "methods": ["POST"]
+      },
+      {
+        "src": "/api/orders/:orderId",
+        "dest": "/index.js",
+        "methods": ["PUT"]
+      },
+      {
+        "src": "/api/orders/:orderId",
+        "dest": "/index.js",
+        "methods": ["DELETE"]
       }
     ]
   }
