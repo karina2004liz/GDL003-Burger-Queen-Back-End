@@ -6,21 +6,32 @@ const mongoose = require('mongoose')
 const app = express()
 const port = process.env.PORT || 3000
 const cors = require('cors');
-const productsFunctions = require('./src/routes/product.js')
-const ordersFunctions = require('./src/routes/order.js')
+const productsFunctions = require('./routes/product.js')
+const ordersFunctions = require('./routes/order.js')
+const authCtrl = require('./userServices/auth.js')
+const middleware = require('./userServices/middleware.js')
+const router = express.Router();
+
 
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+
+
+/*
+require('./userServices/user.js')
+
+
+router.post('/auth/singUp', authCtrl.)
+*/
+
+
 
 app.listen(port, err => {
   if (err) throw err
   console.log(`> Ready On Server http://localhost:${port}`)
 });
 
-app.get('/', (req, res)=>{
-  res.send("Hola")
-})
 app.get('/api/products', productsFunctions.getProducts)
 app.get('/api/products/:productId', productsFunctions.getProductId)
 app.post('/api/products', productsFunctions.postProduct)
@@ -33,32 +44,9 @@ app.post('/api/orders', ordersFunctions.postOrder)
 app.put('/api/orders/:orderId', ordersFunctions.putOrder)
 app.delete('/api/orders/:ordersId', ordersFunctions.deleteOrder)
 
-mongoose.connect('mongodb+srv://karina2004liz:<password>@firstdatabase-t9rak.gcp.mongodb.net/test?retryWrites=true&w=majority', (err, res) => {
+mongoose.connect('mongodb://localhost:27017/Nekoffee', (err, res) => {
   if (err) {
     return console.log(`Error to connect with database: ${err}`)
   }
 })
 
-let products = {
-
-  products: [
-
-    {
-      name: "coffee",
-      price: 15,
-      id: 1,
-    },
-    {
-      name: "tea",
-      price: 10,
-      id: 2,
-    },
-    {
-      name: "chocolate",
-      price: 20,
-      id: 3
-
-    }
-
-  ]
-}
