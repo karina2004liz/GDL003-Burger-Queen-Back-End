@@ -56,4 +56,6 @@ app.get("/products", (request, response) => {
    });
 });
 
-app.get("/", (request, response) => response.send("hola"));
+app.get("/", (request, response) => {
+    response.send("hola");
+});
