@@ -8,10 +8,24 @@ const port = process.env.PORT || 3000
 const cors = require('cors');
 const productsFunctions = require('./routes/product.js')
 const ordersFunctions = require('./routes/order.js')
+const authCtrl = require('./userServices/auth.js')
+const middleware = require('./userServices/middleware.js')
+const router = express.Router();
+
 
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+
+
+/*
+require('./userServices/user.js')
+
+
+router.post('/auth/singUp', authCtrl.)
+*/
+
+
 
 app.listen(port, err => {
   if (err) throw err
@@ -36,26 +50,3 @@ mongoose.connect('mongodb://localhost:27017/Nekoffee', (err, res) => {
   }
 })
 
-let products = {
-
-  products: [
-
-    {
-      name: "coffee",
-      price: 15,
-      id: 1,
-    },
-    {
-      name: "tea",
-      price: 10,
-      id: 2,
-    },
-    {
-      name: "chocolate",
-      price: 20,
-      id: 3
-
-    }
-
-  ]
-}
