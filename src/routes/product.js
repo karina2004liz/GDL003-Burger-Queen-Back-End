@@ -2,10 +2,11 @@ const Product = require('../models/product.js')
 
 module.exports.getProducts = (req, res, next) => {
   Product.find((err, products) => {
+    console.log("error:", err);
     if (err) return res.status(500).send({ message: "Error in process" })
     if (!products) return res.status(404).send({ message: "You don´t have products" })
 
-    res.status(200).send({ products })
+    res.status(200).json({ products });
   })
 };
 

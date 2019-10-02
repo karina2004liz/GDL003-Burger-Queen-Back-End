@@ -14,7 +14,6 @@ module.exports.getOrderId = (req, res) => {
   Order.findById(orderId, (err, orders) => {
     if (err) return res.status(500).send({ message: "Error in process" })
     if (!orders) return res.status(404).send({ message: "The order doesn´t exists" })
-
     res.status(200).send({ orders })
   })
 };
