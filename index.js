@@ -33,10 +33,12 @@ app.post('/api/orders', ordersFunctions.postOrder)
 app.put('/api/orders/:orderId', ordersFunctions.putOrder)
 app.delete('/api/orders/:ordersId', ordersFunctions.deleteOrder)
 
-mongoose.connect('mongodb+srv://karina2004liz:<password>@firstdatabase-t9rak.gcp.mongodb.net/test?retryWrites=true&w=majority', (err, res) => {
+mongoose.connect('mongodb+srv://admin:nekoffee@nekoffee-6mrwt.mongodb.net/test', (err, res) => {
   if (err) {
     return console.log(`Error to connect with database: ${err}`)
   }
+
+  console.log('Connected...')
 })
 
 let products = {
