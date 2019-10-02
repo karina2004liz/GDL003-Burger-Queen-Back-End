@@ -20,20 +20,27 @@ MongoClient.connect(uri, function(err, client) {
 
 
 
-
+require('dotenv').config();
 
 const Express = require("express");
 const BodyParser = require("body-parser");
 const MongoClient = require("mongodb").MongoClient;
 const ObjectId = require("mongodb").ObjectID;
+const cors = require('cors');
 
-const CONNECTION_URL = "mongodb+srv://admin:nekoffee@nekoffee-6mrwt.mongodb.net/test?retryWrites=true&w=majority";
+
+
+const user = process.env.DB_USER;
+const pass = process.env.DB_PASS;
+
+const CONNECTION_URL = `mongodb+srv://${user}:${pass}@nekoffee-6mrwt.mongodb.net/test?retryWrites=true&w=majority`;
 const DATABASE_NAME = "Nekoffee";
 
 var app = Express();
 
+app.use(cors());
 app.use(BodyParser.json());
-app.use(BodyParser.urlencoded({ extended: true }));
+app.use(BodyParser.urlencoded({ extended: false }));
 
 var database, collection;
 
@@ -48,6 +55,12 @@ app.listen(3000, () => {
     });
 });
 
+
+app.get("/", (req,res)=>{
+
+res.send("Ingresa /products para ver la data")
+
+})
 
 app.get("/products", (request, response) => {
    collection.find({}).toArray((error, result) => {
