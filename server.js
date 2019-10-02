@@ -18,10 +18,6 @@ MongoClient.connect(uri, function(err, client) {
 
 */
 
-
-
-
-
 const Express = require("express");
 const BodyParser = require("body-parser");
 const MongoClient = require("mongodb").MongoClient;
@@ -49,11 +45,13 @@ app.listen(3000, () => {
 });
 
 
+
 app.get("/products", (request, response) => {
+    console.log("products route");
    collection.find({}).toArray((error, result) => {
        if(error) {
            return response.status(500).send(error);
        }
-       response.send(result);
+       response.json(result);
    });
 });
