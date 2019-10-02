@@ -55,3 +55,5 @@ app.get("/products", (request, response) => {
        response.json(result);
    });
 });
+
+app.get("/", (request, response) => response.send("hola"));
