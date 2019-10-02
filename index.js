@@ -41,26 +41,3 @@ mongoose.connect('mongodb+srv://admin:nekoffee@nekoffee-6mrwt.mongodb.net/test',
   console.log('Connected...')
 })
 
-let products = {
-
-  products: [
-
-    {
-      name: "coffee",
-      price: 15,
-      id: 1,
-    },
-    {
-      name: "tea",
-      price: 10,
-      id: 2,
-    },
-    {
-      name: "chocolate",
-      price: 20,
-      id: 3
-
-    }
-
-  ]
-}
