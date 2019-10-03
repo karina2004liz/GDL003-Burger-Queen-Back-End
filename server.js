@@ -38,6 +38,12 @@ const DATABASE_NAME = "Nekoffee";
 
 var app = Express();
 
+
+
+
+
+
+
 app.use(cors());
 app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({ extended: false }));
@@ -45,7 +51,7 @@ app.use(BodyParser.urlencoded({ extended: false }));
 var database, collection;
 
 app.listen(3000, () => {
-    MongoClient.connect(CONNECTION_URL, { useNewUrlParser: true }, (error, client) => {
+  const dataMongo =  MongoClient.connect(CONNECTION_URL, { useNewUrlParser: true }, (error, client) => {
         if(error) {
             throw error;
         }
@@ -61,6 +67,8 @@ app.get("/", (req,res)=>{
 res.send("Ingresa /products para ver la data")
 
 })
+
+
 
 app.get("/products", (request, response) => {
     console.log("products route");
