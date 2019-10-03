@@ -63,10 +63,15 @@ res.send("Ingresa /products para ver la data")
 })
 
 app.get("/products", (request, response) => {
+    console.log("products route");
    collection.find({}).toArray((error, result) => {
        if(error) {
            return response.status(500).send(error);
        }
-       response.send(result);
+       response.json(result);
    });
+});
+
+app.get("/", (request, response) => {
+    response.send("hola");
 });

@@ -15,8 +15,8 @@
         },
         
       {
-        "src": "/api/products",
-        "dest": "/index.js",
+        "src": "/products",
+        "dest": "/server.js",
         "methods": ["GET"]
       },
       {
