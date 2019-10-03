@@ -2,7 +2,7 @@
 
 {
     "version": 2,
-    "builds": [{ "src": "/server.js", "use": "@now/node-server" }],
+    "builds": [{ "src": "/index.js", "use": "@now/node-server" }],
     "routes": [
         {
             "headers": {
@@ -11,12 +11,12 @@
                 "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept"
             },
             "src": "/.*",
-            "dest": "/server.js"
+            "continue": true
         },
         
       {
-        "src": "/products",
-        "dest": "/server.js",
+        "src": "/api/products",
+        "dest": "/index.js",
         "methods": ["GET"]
       },
       {

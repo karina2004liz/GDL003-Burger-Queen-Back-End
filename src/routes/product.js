@@ -1,19 +1,20 @@
 const Product = require('../models/product.js')
 
-module.exports.getProducts = (req, res, next) => {
+module.exports.getProducts = (req, res) => {
+  console.log("finding products...")
   Product.find((err, products) => {
     console.log("error:", err);
     if (err) return res.status(500).send({ message: "Error in process" })
     if (!products) return res.status(404).send({ message: "You don´t have products" })
 
-    res.status(200).json({ products });
+    res.status(200).send({ products });
   })
 };
 
 module.exports.getProductId = (req, res) => {
   let productId = req.params.productId
   Product.findById(productId, (err, products) => {
-    if (err) return res.status(500).send({ message: "Error in process" })
+    if (err) return res.status(500).send({ message: "Error in process: " + err })
     if (!products) return res.status(404).send({ message: "The product doesn´t exists" })
 
     res.status(200).send({ products })
