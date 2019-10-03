@@ -18,13 +18,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 
-/*
-require('./userServices/user.js')
-
-
-router.post('/auth/singUp', authCtrl.)
-*/
-
 
 
 app.listen(port, err => {
