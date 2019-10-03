@@ -1,5 +1,6 @@
 'use strict'
 
+require('dotenv').config();
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
@@ -12,7 +13,6 @@ const authCtrl = require('./src/userServices/auth.js')
 const middleware = require('./src/userServices/middleware.js')
 const router = express.Router();
 const CONNECTION_URL = "mongodb://admin:nekoffee@nekoffee-shard-00-00-6mrwt.mongodb.net:27017,nekoffee-shard-00-01-6mrwt.mongodb.net:27017,nekoffee-shard-00-02-6mrwt.mongodb.net:27017/Nekoffee?ssl=true&replicaSet=Nekoffee-shard-0&authSource=admin";
-
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
