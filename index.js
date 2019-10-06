@@ -60,10 +60,12 @@ app.post('/api/orders', withMongoose(ordersFunctions.postOrder))
 app.put('/api/orders/:orderId', withMongoose(ordersFunctions.putOrder))
 app.delete('/api/orders/:ordersId', withMongoose(ordersFunctions.deleteOrder))
 
-apiRoutes.get('/setup', withMongoose(userFunctions.createUser))
+apiRoutes.post('/createuser', withMongoose(userFunctions.createUser))
 apiRoutes.get('/', withMongoose(userFunctions.userLog))
 apiRoutes.get('/users', withMongoose(userFunctions.userJson))
 apiRoutes.post('/authenticate', withMongoose(userFunctions.userAuth))
 apiRoutes.get('/private', withMongoose(userFunctions.userAuthStart, middleware.ensureAuthenticated))
+apiRoutes.post('/register', withMongoose(userFunctions.userRegister))
+
 
 

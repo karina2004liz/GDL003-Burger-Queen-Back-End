@@ -46,7 +46,7 @@ module.exports.putOrder = (req, res) => {
 };
 
 module.exports.deleteOrder = (req, res) => {
-  let orderId = req.params.orderId
+  let orderId = req.params.orderId;
 
   Order.findById(orderId, (err, order) => {
     if (err) res.status(500).send({ message: `Error to delete the order: ${err}` })
