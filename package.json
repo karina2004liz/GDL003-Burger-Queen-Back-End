@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon node .",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "dev": "nodemon src/index.js"
   },
   "repository": {
@@ -26,6 +26,7 @@
     "crypto": "^1.0.1",
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
+    "jest": "^24.9.0",
     "jwt-simple": "^0.5.6",
     "moment": "^2.24.0",
     "mongodb": "^3.3.2",
@@ -33,6 +34,10 @@
     "now": "^16.2.0"
   },
   "devDependencies": {
+    "mockingoose": "^2.13.2",
     "nodemon": "^1.19.2"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }
