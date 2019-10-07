@@ -1,19 +1,29 @@
-var jwt = require("jwt-simple");
-var moment = require("moment");
-var config = require("./config");
+//var jwt = require("jwt-simple");
+//var moment = require("moment");
+//var config = require("./config");
 
-exports.ensureAuthenticated = function(req, res, next) {
+var services = require('./service.js')
+
+module.exports.ensureAuthenticated = function(req, res, next) {
+
   if (!req.headers.authorization) {
-    return res.status(403).send({ message: "Error" });
+    return res.status(403).send({ message: "No tienes acceso" });
   }
 
   var token = req.headers.authorization.split(" ")[1];
-  var payload = jwt.decode(token, config.TOKEN_SECRET);
 
-  if (payload.exp <= moment().unix()) {
-    return res.status(401).send({ message: "The token expires" });
-  }
+  services.decodeToken(token)
+  .then( response =>{
 
-  req.user = payload.sub;
-  next();
+    req.user = response
+
+    next()
+
+  })
+  .catch(response=>{
+
+    res.status(response.status)
+  })
+
+
 };
