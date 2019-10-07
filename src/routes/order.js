@@ -18,16 +18,16 @@ module.exports.getOrderId = (req, res) => {
   })
 };
 
+
 module.exports.postOrder = (req, res) => {
   console.log('POST /api/orders')
   console.log(req.body)
 
-  let order = new Order()
+  let order = new Order() 
 
-  order.user = req.body.user
-  order.date = req.body.date
   order.client = req.body.client
-  order.request = req.body.request
+  order.order = req.body.order
+  //order.order.name = req.body.order.name
 
   order.save((err, orderStored) => {
     if (err) res.status(500).send({ message: `Error while saving in database: ${err}` })

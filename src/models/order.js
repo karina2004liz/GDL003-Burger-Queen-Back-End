@@ -7,8 +7,9 @@ const OrderSchema = new Schema({
     user: String,
     date: Date,
     client: String,
-    request: Array
-    })
+    order: Object
+   
+})
 
 module.exports = mongoose.model('Order', OrderSchema)
 
