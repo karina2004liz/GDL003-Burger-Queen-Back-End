@@ -1,3 +1,3 @@
 module.exports = {
-    SECRET_TOKEN: 'miclavedetokens',
-}
+    TOKEN_SECRET: process.env.TOKEN_SECRET || "tokennekoffee"
+};
