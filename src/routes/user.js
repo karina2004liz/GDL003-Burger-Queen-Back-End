@@ -17,7 +17,7 @@ module.exports.createUser = (req, res) => {
 
     console.log("User saved successfully");
     res.json({ success: true });
-    res.status(200).send({ message: "User saved successfully" });
+    res.status(200).send({ token : service.createToken(user) });
   });
 };
 
@@ -33,21 +33,11 @@ module.exports.userRegister = (req, res) => {
 // API ROUTES
 var apiRoutes = express.Router();
 
-module.exports.userLog = (req, res) => {
-  res.json({ message: "Bienvenido al api de programacion.com.py :)" });
-};
 
-module.exports.userJson = (req, res) => {
-  User.find({}, function(err, users) {
-    res.json(users);
-  });
-};
-
-// Route to authenticate a user (POST http://localhost:3000/api/authenticate)
 module.exports.userAuth = (req, res) => {
   //find the user
   User.findOne(
-    {
+      {
       name: req.body.name
     },
     function(err, user) {
@@ -78,6 +68,19 @@ module.exports.userAuth = (req, res) => {
     }
   );
 };
+
+module.exports.userLog = (req, res) => {
+  res.json({ message: "Bienvenido al api de programacion.com.py :)" });
+};
+
+module.exports.userJson = (req, res) => {
+  User.find({}, function(err, users) {
+    res.json(users);
+  });
+};
+
+// Route to authenticate a user (POST http://localhost:3000/api/authenticate)
+
 
 // Secure route
 module.exports.userAuthStart = (req, res) => {
