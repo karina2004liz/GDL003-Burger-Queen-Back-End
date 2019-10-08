@@ -1,4 +1,4 @@
-const Product = require('../models/product.js')
+const Product = require('../models/product.js').Model
 
 module.exports.getProducts = (req, res) => {
   console.log("finding products...")
@@ -25,12 +25,7 @@ module.exports.postProduct = (req, res) => {
   console.log('POST /api/products')
   console.log(req.body)
 
-  let product = new Product()
-  product.name = req.body.name
-  product.picture = req.body.picture
-  product.price = req.body.price
-  product.category = req.body.category
-  product.description = req.body.description
+  let product = new Product(req.body)
 
   product.save((err, productStored) => {
     if (err) res.status(500).send({ message: `Error while saving in database: ${err}` })

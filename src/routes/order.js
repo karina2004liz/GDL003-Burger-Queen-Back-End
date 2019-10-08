@@ -1,4 +1,4 @@
-const Order = require('../models/order.js')
+const Order = require('../models/order.js').Model
 
 module.exports.getOrders = (req, res, next) => {
   Order.find((err, orders) => {
@@ -23,11 +23,7 @@ module.exports.postOrder = (req, res) => {
   console.log('POST /api/orders')
   console.log(req.body)
 
-  let order = new Order() 
-
-  order.client = req.body.client
-  order.order = req.body.order
-  //order.order.name = req.body.order.name
+  let order = new Order(req.body) 
 
   order.save((err, orderStored) => {
     if (err) res.status(500).send({ message: `Error while saving in database: ${err}` })

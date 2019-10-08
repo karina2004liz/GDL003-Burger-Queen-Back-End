@@ -6,8 +6,9 @@ const Schema = mongoose.Schema
 const ProductSchema = Schema({
     name: String,
     price: { type: Number, default: 0 },
-    category: { type: String, enum: ['Drinks', 'Desserts'] },
-    description: String
+    category: String,
+    kinds: [String]
 })
 
-module.exports = mongoose.model('Product', ProductSchema)
+module.exports.Model = mongoose.model('Product', ProductSchema);
+module.exports.Schema = ProductSchema
