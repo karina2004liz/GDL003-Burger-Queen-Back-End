@@ -21,7 +21,7 @@ module.exports.getOrderId = (req, res) => {
 
 module.exports.postOrder = (req, res) => {
   console.log('POST /api/orders')
-  console.log(req.body)
+  console.log("req.body", req.body);
 
   let order = new Order(req.body) 
 

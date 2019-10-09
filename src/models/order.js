@@ -8,7 +8,8 @@ const OrderSchema = new Schema({
     user: String,
     date: Date,
     client: String,
-    order: [Product.Schema]
+    order: [Product.Schema],
+    status: { type: String, default: "Pending" }
 })
 
 module.exports.Model = mongoose.model('Order', OrderSchema)

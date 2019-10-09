@@ -7,7 +7,8 @@ const ProductSchema = Schema({
     name: String,
     price: { type: Number, default: 0 },
     category: String,
-    kinds: [String]
+    kinds: [String],
+    uuid: String
 })
 
 module.exports.Model = mongoose.model('Product', ProductSchema);
