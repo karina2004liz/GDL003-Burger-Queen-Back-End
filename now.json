@@ -8,7 +8,8 @@
             "headers": {
                 "Access-Control-Allow-Origin": "*",
                 "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-                "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept"
+                "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept, Upgrade-Insecure-Requests"
+                
             },
             "src": "/.*",
             "continue": true
@@ -63,6 +64,12 @@
         "src": "/api/orders/:orderId",
         "dest": "/index.js",
         "methods": ["DELETE"]
+      },
+      {
+        "src": "/api/authenticate",
+        "dest": "/index.js",
+        "methods": ["POST"]
       }
+
     ]
   }
