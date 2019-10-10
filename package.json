@@ -2,6 +2,9 @@
   "name": "gdl003-burger-queen-back-end",
   "version": "1.0.0",
   "description": "## 1. Preámbulo",
+  "engines": {
+    "node": "10.x"
+  },
   "main": "index.js",
   "scripts": {
     "start": "nodemon node .",
