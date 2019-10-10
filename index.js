@@ -14,7 +14,6 @@ var methodOverride = require("method-override");
 const middleware = require('./src/userServices/middleware.js')
 const apiRoutes = express.Router();
 
-
 const CONNECTION_URL = "mongodb://admin:nekoffee@nekoffee-shard-00-00-6mrwt.mongodb.net:27017,nekoffee-shard-00-01-6mrwt.mongodb.net:27017,nekoffee-shard-00-02-6mrwt.mongodb.net:27017/Nekoffee?ssl=true&replicaSet=Nekoffee-shard-0&authSource=admin";
 
 app.use(cors())

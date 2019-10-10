@@ -12,7 +12,7 @@ module.exports.getProducts = (req, res) => {
 };
 
 module.exports.getProductId = (req, res) => {
-  let productId = req.params.productId
+  let productId = req.params.productId;
   Product.findById(productId, (err, products) => {
     if (err) return res.status(500).send({ message: "Error in process: " + err })
     if (!products) return res.status(404).send({ message: "The product doesn´t exists" })

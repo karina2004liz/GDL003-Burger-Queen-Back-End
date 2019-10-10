@@ -8,6 +8,7 @@ const ProductSchema = Schema({
     price: { type: Number, default: 0 },
     category: String,
     kinds: [String],
+    flavors: [String],
     uuid: String
 })
 
