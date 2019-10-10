@@ -1,12 +1,36 @@
-# Burger Queen - Backend con Node.js
+# API Rest to Nekoffee 
 
-## 1. Preámbulo
+## Introducción
 
-Tu equipo del Open House necesita un Back-end para almacenar y manejar la data de la aplicación.
+Se crea API Rest para nuestro cliente el cual es dueño de la cafetería **Nekoffee** con la finalidad de que él pueda proporcionar un buen manejo de sus ordenes y productos a sus empleados.
 
-En este caso el cliente quiere que se trabaje un API y como equipo han decidido trabajar en un _Restful API_ que será compatible con los _requests_ del Front-end.
+## Resumen del proyecto
 
-## 2. Resumen del proyecto
+
+
+
+
+
+## Dependencias
+
+Se hizo uso de las siguientes dependencias:
+
+**Express**
+**bodyParser**
+**Cors**
+**crypto**
+**dotenv**
+**jest**
+**jwt-simple**
+**method-override**
+**moment**
+**mongodb**
+**mongoose**
+
+## Deploy
+
+**Heroku**
+
 
 Con un backend en este caso nos referimos a un _servidor web_, que es
 básicamente un programa que _escucha_ en un puerto de red, a través del cual

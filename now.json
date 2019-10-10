@@ -7,9 +7,14 @@
         {
             "headers": {
                 "Access-Control-Allow-Origin": "*",
+<<<<<<< HEAD
                 "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
                 "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept, Upgrade-Insecure-Requests"
                 
+=======
+                "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
+                "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept"
+>>>>>>> 95103ab07b668a8b51fe5b060189795bedb58138
             },
             "src": "/.*",
             "continue": true

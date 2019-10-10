@@ -1,18 +1,11 @@
 const product = require('../routes/product.js');
-const productModel = require('../models/product');
+const productModel = require('../models/product').Model;
 const mockingoose = require('mockingoose').default;
 
 describe("getProducts", () => {
   it("is a function", () => {
     expect(typeof product.getProducts).toBe("function");
   });
-  /*it("it should be return the list products or not", () => {
-    let  ok = false;
-    jest.mockingoose(productModel.prototype, "find")
-      .mockImplementationOnce(() => ok = true)
-    product.getProducts({}, {})
-    expect(ok).toBe(true);
-  }); */
 });
 
 describe('test mongoose product model', () => {
@@ -20,8 +13,7 @@ describe('test mongoose product model', () => {
     const docsArg = [{
       name: 'coffe',
       price: 25,
-      category: ['Drinks'],
-      description: 'Hot-coffee'
+      category: ['Drinks']
     }]
 
     mockingoose(productModel).toReturn(docsArg, 'find');
@@ -42,7 +34,29 @@ describe('test mongoose product model', () => {
       console.log(docsResp)
       expect(docsResp.products.length).toBe(1)
     });
-  });
+  }); 
+});
 
-  
+describe("getProductId", () => {
+  it("is a function", () => {
+    expect(typeof product.getProductId).toBe("function");
+  });
+});
+
+describe("postProduct", () => {
+  it("is a function", () => {
+    expect(typeof product.postProduct).toBe("function");
+  });
+});
+
+describe("putProduct", () => {
+  it("is a function", () => {
+    expect(typeof product.putProduct).toBe("function");
+  });
+});
+
+describe("deleteProduct", () => {
+  it("is a function", () => {
+    expect(typeof product.deleteProduct).toBe("function");
+  });
 });
