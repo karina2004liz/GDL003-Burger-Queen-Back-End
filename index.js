@@ -18,8 +18,9 @@ const apiRoutes = express.Router();
 const CONNECTION_URL = "mongodb://admin:nekoffee@nekoffee-shard-00-00-6mrwt.mongodb.net:27017,nekoffee-shard-00-01-6mrwt.mongodb.net:27017,nekoffee-shard-00-02-6mrwt.mongodb.net:27017/Nekoffee?ssl=true&replicaSet=Nekoffee-shard-0&authSource=admin";
 
 app.use(cors())
-app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
+//app.use(bodyParser.urlencoded({ extended: true }))
+
 app.use(methodOverride())
 app.use('/api', apiRoutes);
 
@@ -57,7 +58,7 @@ app.delete('/api/products/:productId', withMongoose(productsFunctions.deleteProd
 
 app.get('/api/orders', withMongoose(ordersFunctions.getOrders))
 app.get('/api/orders/:orderId', withMongoose(ordersFunctions.getOrderId))
-app.post('/api/orders', withMongoose(ordersFunctions.postOrder))
+app.post('/api/orders', withMongoose(ordersFunctions.postOrder));
 app.put('/api/orders/:orderId', withMongoose(ordersFunctions.putOrder))
 app.delete('/api/orders/:ordersId', withMongoose(ordersFunctions.deleteOrder))
 
