@@ -57,9 +57,9 @@ app.delete('/api/products/:productId',middleware.ensureAuthenticated, withMongoo
 
 app.get('/api/orders', withMongoose(ordersFunctions.getOrders))
 app.get('/api/orders/:orderId', withMongoose(ordersFunctions.getOrderId))
-app.post('/api/orders', withMongoose(ordersFunctions.postOrder));
-app.put('/api/orders/:orderId', withMongoose(ordersFunctions.putOrder))
-app.delete('/api/orders/:ordersId', withMongoose(ordersFunctions.deleteOrder))
+app.post('/api/orders',middleware.ensureAuthenticated, withMongoose(ordersFunctions.postOrder));
+app.put('/api/orders/:orderId',middleware.ensureAuthenticated, withMongoose(ordersFunctions.putOrder))
+app.delete('/api/orders/:ordersId',middleware.ensureAuthenticated, withMongoose(ordersFunctions.deleteOrder))
 
 apiRoutes.post('/createuser', withMongoose(userFunctions.createUser))
 apiRoutes.get('/', withMongoose(userFunctions.userLog))
