@@ -32,6 +32,31 @@ Se hizo uso de las siguientes dependencias:
 **Heroku**
 
 
+## Los endpoints son:
+
+
+### PRODUCTOS
+
+GET /api/products
+GET /api/products/:productId
+POST /api/products
+PUT /api/products/:productId
+DELETE /api/products/:productId
+
+### ORDENES
+
+GET /api/orders
+GET /api/orders/:orderId
+POST /api/orders
+PUT /api/orders/:orderId
+DELETE /api/orders/:ordersId
+
+### USER
+
+POST /api/createuser
+POST /api/authenticate
+
+
 Con un backend en este caso nos referimos a un _servidor web_, que es
 básicamente un programa que _escucha_ en un puerto de red, a través del cual
 podemos enviarle _consultas_ (_request_) y obtener _respuestas_ (_response_).
