@@ -36,9 +36,14 @@ var apiRoutes = express.Router();
 
 module.exports.userAuth = (req, res) => {
   //find the user
+  console.log({
+    name: req.body.name,
+    password: req.body.password
+  });
   User.findOne(
       {
-      name: req.body.name
+      name: req.body.name,
+      password: req.body.password
     },
     function(err, user) {
       if (err) throw err;
