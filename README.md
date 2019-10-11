@@ -15,8 +15,8 @@ Se crea API Rest para nuestro cliente el cual es dueño de la cafetería **Nekof
 
 Se hizo uso de las siguientes dependencias:
 
-**Express**
-**bodyParser**
+* **Express**
+* **bodyParser**
 **Cors**
 **crypto**
 **dotenv**
@@ -37,24 +37,24 @@ Se hizo uso de las siguientes dependencias:
 
 ### PRODUCTOS
 
-GET /api/products
-GET /api/products/:productId
-POST /api/products
-PUT /api/products/:productId
-DELETE /api/products/:productId
+* [ ] `GET /api/products`
+* [ ] `GET /api/products/:productId`
+* [ ] `POST /api/products`
+* [ ] `PUT /api/products/:productId`
+* [ ] `DELETE /api/products/:productId`
 
 ### ORDENES
 
-GET /api/orders
-GET /api/orders/:orderId
-POST /api/orders
-PUT /api/orders/:orderId
-DELETE /api/orders/:ordersId
+* [ ] `GET /api/orders`
+* [ ] `GET /api/orders/:orderId`
+* [ ] `POST /api/orders`
+* [ ] `PUT /api/orders/:orderId`
+* [ ] `DELETE /api/orders/:ordersId`
 
 ### USER
 
-POST /api/createuser
-POST /api/authenticate
+* [ ] `POST /api/createuser`
+* [ ] `POST /api/authenticate`
 
 
 Con un backend en este caso nos referimos a un _servidor web_, que es
