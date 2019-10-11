@@ -53,9 +53,9 @@ let withMongoose = (next) => {
 
 app.get('/api/products', withMongoose(productsFunctions.getProducts))
 app.get('/api/products/:productId', withMongoose(productsFunctions.getProductId))
-app.post('/api/products', withMongoose(productsFunctions.postProduct))
-app.put('/api/products/:productId', withMongoose(productsFunctions.putProduct))
-app.delete('/api/products/:productId', withMongoose(productsFunctions.deleteProduct))
+app.post('/api/products',middleware.ensureAuthenticated, withMongoose(productsFunctions.postProduct))
+app.put('/api/products/:productId',middleware.ensureAuthenticated, withMongoose(productsFunctions.putProduct))
+app.delete('/api/products/:productId',middleware.ensureAuthenticated, withMongoose(productsFunctions.deleteProduct))
 
 app.get('/api/orders', withMongoose(ordersFunctions.getOrders))
 app.get('/api/orders/:orderId', withMongoose(ordersFunctions.getOrderId))
