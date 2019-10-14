@@ -72,3 +72,22 @@ apiRoutes.get('/privates', middleware.ensureAuthenticated, (req, res) =>{
 })
 
 
+
+
+
+app.get('/api/prueba', (req, res)=>{
+
+  res.status(200).send(data.name)
+
+});
+
+
+
+var data = {
+
+  "name": "Adri",
+  "Edad": "29",
+  "Sexo": "No muy seguido"
+
+
+}

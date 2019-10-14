@@ -17,15 +17,15 @@ Se hizo uso de las siguientes dependencias:
 
 * **Express**
 * **bodyParser**
-**Cors**
-**crypto**
-**dotenv**
-**jest**
-**jwt-simple**
-**method-override**
-**moment**
-**mongodb**
-**mongoose**
+* **Cors**
+* **crypto**
+* **dotenv**
+* **jest**
+* **jwt-simple**
+* **method-override**
+* **moment**
+* **mongodb**
+* **mongoose**
 
 ## Deploy
 
