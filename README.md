@@ -6,6 +6,19 @@ Se crea API Rest para nuestro cliente el cual es dueño de la cafetería **Nekof
 
 ## Resumen del proyecto
 
+### Historias de Usuario
+
+#### Historia de usuario 1
+* Cliente requiere bd para obtener(GET) su data en su WebApp
+#### Historia de usuario 2
+* Cliente requiere bd para postear o subir(POST) su data en su WebApp
+#### Historia de usuario 3
+* Cliente requiere bd para editar(PUT) su data en su WebApp
+#### Historia de usuario 4
+* Cliente requiere bd para borrar(DELETE) su data en su WebApp
+#### Historia de usuario 5
+* Cliente requiere que la bd tenga acceso con Token de seguridad
+
 
 
 
@@ -29,7 +42,7 @@ Se hizo uso de las siguientes dependencias:
 
 ## Deploy
 
-**Heroku**
+* **Heroku**
 
 
 ## Los endpoints son:
