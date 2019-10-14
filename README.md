@@ -57,6 +57,9 @@ Se hizo uso de las siguientes dependencias:
 * [ ] `POST /api/authenticate`
 
 
+![Imagen Endpoints](https://i.ibb.co/8m64bzn/Captura-de-pantalla-de-2019-10-14-12-25-35.png)
+
+
 Con un backend en este caso nos referimos a un _servidor web_, que es
 básicamente un programa que _escucha_ en un puerto de red, a través del cual
 podemos enviarle _consultas_ (_request_) y obtener _respuestas_ (_response_).
