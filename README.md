@@ -4,9 +4,8 @@
 
 Se crea API Rest para nuestro cliente el cual es dueño de la cafetería **Nekoffee** con la finalidad de que él pueda proporcionar un buen manejo de sus ordenes y productos a sus empleados.
 
-## Resumen del proyecto
 
-### Historias de Usuario
+## Historias de Usuario
 
 #### Historia de usuario 1
 * Cliente requiere bd para obtener(GET) su data en su WebApp
@@ -20,7 +19,13 @@ Se crea API Rest para nuestro cliente el cual es dueño de la cafetería **Nekof
 * Cliente requiere que la bd tenga acceso con Token de seguridad
 
 
+### Resumen del proyecto
 
+Se crea bd con los requerimentos antes mencionados, se instalaron varias dependencias que se listaron al final de este documento.
+
+Se crearron **endpoints** para cada necesidad del cliente(**POST**,**PUT**,**GET**,**DELETE**).
+
+En primera instancia se hizo deploy con **NOW** pero no se pudieron crear los accesos de manera correcta(**CORS**) a la data. Posteriormente se implementó el deploy con **HEROKU** el cual tuvo buena respuesta por parte del servidor y se permitió el correcto acceso a la data.
 
 
 
